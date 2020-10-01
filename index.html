@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="p-animation">
+        <div class="object"></div>
+        <div class="object"></div>
+        <div class="object"></div>
+        <div class="object"></div>
+        <div class="object"></div>
+        <!-- <div class="object"></div>
+      <div class="object"></div>
+      <div class="object"></div>
+      <div class="object"></div> -->
+        <div class="object"></div>
+        <div class="object"></div>
+        <div class="object"></div>
+    </div>
+    <img src="bg/IMG-20200702-WA0040.jpg" alt="" />
+    <style>
+        .p-animation {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            background: #000;
+            position: absolute;
+        }
+        
+        .disap {
+            animation: vanish 1s forwards;
+        }
+        
+        @keyframes vanish {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        .object {
+            height: 40px;
+            width: 4px;
+            background-color: bisque;
+            position: relative;
+            border-radius: 10px;
+            top: 50%;
+            left: 50%;
+            margin: 0 4px;
+            transform: translate(-50%, -50%);
+            animation: loading 1s infinite;
+        }
+        
+        .object:nth-child(2) {
+            animation-delay: 100ms;
+        }
+        
+        .object:nth-child(3) {
+            animation-delay: 200ms;
+        }
+        
+        .object:nth-child(4) {
+            animation-delay: 300ms;
+        }
+        
+        .object:nth-child(5) {
+            animation-delay: 400ms;
+        }
+        
+        .object:nth-child(6) {
+            animation-delay: 500ms;
+        }
+        
+        .object:nth-child(7) {
+            animation-delay: 600ms;
+        }
+        /*         
+        .object:nth-child(8) {
+            animation-delay: 700ms;
+        }
+        
+        .object:nth-child(9) {
+            animation-delay: 800ms;
+        }
+        
+        .object:nth-child(10) {
+            animation-delay: 900ms;
+        }
+        
+        .object:nth-child(11) {
+            animation-delay: 1000ms;
+        } */
+        
+        @keyframes loading {
+            0% {
+                height: 0;
+            }
+            50% {
+                height: 40px;
+            }
+            100% {
+                height: 0;
+            }
+        }
+    </style>
+    <script>
+        var d = document.querySelector(".p-animation");
+        // d.classList.add("disap");
+        // console.log(d);
+
+        window.addEventListener("load", vanish);
+
+        function vanish() {
+            d.classList.add("disap");
+        }
+    </script>
+</body>
+
+</html>
